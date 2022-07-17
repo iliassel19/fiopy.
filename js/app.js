@@ -8,7 +8,9 @@ function animateNavItem() {
     stagger: 0.2,
   });
 }
-animateNavItem();
+if (window.screen.width > 700) {
+  animateNavItem();
+}
 gsap.registerPlugin(ScrollTrigger);
 
 const menu = document.querySelector(".navigation__burger");
