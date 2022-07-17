@@ -1,12 +1,14 @@
 const tl = gsap.timeline();
 
-tl.from(".navigation__item", {
-  delay: 0.4,
-  opacity: 0,
-  top: "-4rem",
-  stagger: 0.2,
-});
-
+function animateNavItem() {
+  tl.from(".navigation__item", {
+    delay: 0.4,
+    opacity: 0,
+    top: "-4rem",
+    stagger: 0.2,
+  });
+}
+animateNavItem();
 gsap.registerPlugin(ScrollTrigger);
 
 const menu = document.querySelector(".navigation__burger");
@@ -20,6 +22,7 @@ const menuOpen = function () {
     menuLines.forEach((line) => line.classList.toggle("active"));
     menuList.classList.toggle("active");
     menu.classList.toggle("active");
+    animateNavItem();
   });
 };
 menuOpen();
