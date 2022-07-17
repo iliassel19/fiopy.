@@ -1,3 +1,5 @@
+import { gsap } from "../node_modules/gsap/all.js";
+
 const tl = gsap.timeline();
 
 function animateNavItem() {
@@ -11,13 +13,11 @@ function animateNavItem() {
 if (window.screen.width > 700) {
   animateNavItem();
 }
-gsap.registerPlugin(ScrollTrigger);
 
 const menu = document.querySelector(".navigation__burger");
 const menuLines = document.querySelectorAll(".navigation__burger-line");
 const menuList = document.querySelector(".navigation__list");
 const navigationItems = document.querySelector(".navigation__list");
-console.log(document);
 // Mobile navigation handler
 const menuOpen = function () {
   menu.addEventListener("click", function () {
